@@ -1,21 +1,10 @@
-package com.example.demo.model;
+package com.example.demo.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Entity;
+import com.example.demo.model.Role;
 
-@Entity
-public class Role{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column
+public class RoleDTO {
     private String name;
 
-    @Column
     private String description;
 
     public String getName() {
@@ -35,5 +24,12 @@ public class Role{
     }
 
 
+    public Role getRoleFromDTO(){
+        Role rol = new Role();
+        rol.setName(this.name);
+        rol.setDescription(this.description);
+
+        return rol;
+    }
     
 }
