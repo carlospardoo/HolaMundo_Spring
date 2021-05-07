@@ -34,7 +34,7 @@ public CommandLineRunner initApp(UserServiceImpl userService, RoleServiceImpl ro
 		
 
 		usuario = roleService.save(usuario);
-		admin = roleService.save(usuario);
+		admin = roleService.save(admin);
 	};
 }
 
