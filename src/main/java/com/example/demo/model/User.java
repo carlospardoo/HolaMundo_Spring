@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Entity;
@@ -39,6 +41,11 @@ public class User{
         inverseJoinColumns = { @JoinColumn(name = "ROLE_ID") }
     )
     private Set<Role> roles;
+
+    /* */
+    @OneToMany(mappedBy = "user_id")
+    private List <Nota> notas;
+    /* */
 
     public String getUsername() {
         return username;

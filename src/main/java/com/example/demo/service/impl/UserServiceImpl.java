@@ -31,4 +31,8 @@ public class UserServiceImpl implements UserService{
     public User findOne(String username) {
         return userDao.findByUsername(username);
     }
+
+    public User alterSave(User infoUsuario) {
+        return userDao.save(infoUsuario);
+    }
 }
