@@ -13,6 +13,14 @@ public class UserDto{
     private String color;
     
 
+    public UserDto(String color, String name, String username, String password){
+        super();
+        this.color = color;
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
+
     public String getUsername() {
         return username;
     }

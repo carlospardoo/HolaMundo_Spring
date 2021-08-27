@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.example.demo.dto.UserDto;
 import com.example.demo.model.Nota;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
@@ -53,6 +54,14 @@ public CommandLineRunner initApp(UserServiceImpl userService, RoleServiceImpl ro
 		nota.setTitulo("Historia");
 		nota.setUser(savedUser);
 		notaService.save(nota);
+
+
+		UserDto usr1 = new UserDto("red", "Carlos", "cpardo", "123");
+		UserDto usr2 = new UserDto("yellow", "Carlo", "cpardo2", "456");
+		UserDto usr3 = new UserDto("blue", "Carl", "cpardo3", "789");
+		userService.save(usr1);
+		userService.save(usr2);
+		userService.save(usr3);
 	};
 }
 
